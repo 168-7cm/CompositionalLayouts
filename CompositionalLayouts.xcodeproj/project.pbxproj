@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		BBB107BA2648284C003E9D08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB107B92648284C003E9D08 /* AppDelegate.swift */; };
 		BBB107BC2648284C003E9D08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB107BB2648284C003E9D08 /* SceneDelegate.swift */; };
-		BBB107BE2648284C003E9D08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB107BD2648284C003E9D08 /* ViewController.swift */; };
-		BBB107C12648284C003E9D08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB107BF2648284C003E9D08 /* Main.storyboard */; };
 		BBB107C32648284D003E9D08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBB107C22648284D003E9D08 /* Assets.xcassets */; };
 		BBB107C62648284D003E9D08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB107C42648284D003E9D08 /* LaunchScreen.storyboard */; };
 		BBB107D12648284D003E9D08 /* CompositionalLayoutsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB107D02648284D003E9D08 /* CompositionalLayoutsTests.swift */; };
 		BBB107DC2648284D003E9D08 /* CompositionalLayoutsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB107DB2648284D003E9D08 /* CompositionalLayoutsUITests.swift */; };
+		BBB10808264829BB003E9D08 /* ViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB10807264829BB003E9D08 /* ViewBase.swift */; };
+		BBB10810264829C3003E9D08 /* PresenterBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB1080F264829C3003E9D08 /* PresenterBase.swift */; };
+		BBB10815264829D5003E9D08 /* ViewControllerInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB10814264829D5003E9D08 /* ViewControllerInstantiable.swift */; };
+		BBB1081A264829DE003E9D08 /* PresenterInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB10819264829DE003E9D08 /* PresenterInstantiable.swift */; };
+		BBB1082026482A13003E9D08 /* ViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB1081F26482A13003E9D08 /* ViewControllerBase.swift */; };
+		BBB1082E26482AB2003E9D08 /* CompositionalLayoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB1082D26482AB2003E9D08 /* CompositionalLayoutsViewController.swift */; };
+		BBB1084F2648E647003E9D08 /* ConpositionalLayouts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB1084E2648E647003E9D08 /* ConpositionalLayouts.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +43,6 @@
 		BBB107B62648284C003E9D08 /* CompositionalLayouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompositionalLayouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB107B92648284C003E9D08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBB107BB2648284C003E9D08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BBB107BD2648284C003E9D08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BBB107C02648284C003E9D08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBB107C22648284D003E9D08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBB107C52648284D003E9D08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBB107C72648284D003E9D08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,13 @@
 		BBB107D72648284D003E9D08 /* CompositionalLayoutsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompositionalLayoutsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB107DB2648284D003E9D08 /* CompositionalLayoutsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutsUITests.swift; sourceTree = "<group>"; };
 		BBB107DD2648284D003E9D08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBB10807264829BB003E9D08 /* ViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBase.swift; sourceTree = "<group>"; };
+		BBB1080F264829C3003E9D08 /* PresenterBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterBase.swift; sourceTree = "<group>"; };
+		BBB10814264829D5003E9D08 /* ViewControllerInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerInstantiable.swift; sourceTree = "<group>"; };
+		BBB10819264829DE003E9D08 /* PresenterInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterInstantiable.swift; sourceTree = "<group>"; };
+		BBB1081F26482A13003E9D08 /* ViewControllerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBase.swift; sourceTree = "<group>"; };
+		BBB1082D26482AB2003E9D08 /* CompositionalLayoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutsViewController.swift; sourceTree = "<group>"; };
+		BBB1084E2648E647003E9D08 /* ConpositionalLayouts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConpositionalLayouts.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +109,9 @@
 		BBB107B82648284C003E9D08 /* CompositionalLayouts */ = {
 			isa = PBXGroup;
 			children = (
-				BBB107B92648284C003E9D08 /* AppDelegate.swift */,
-				BBB107BB2648284C003E9D08 /* SceneDelegate.swift */,
-				BBB107BD2648284C003E9D08 /* ViewController.swift */,
-				BBB107BF2648284C003E9D08 /* Main.storyboard */,
-				BBB107C22648284D003E9D08 /* Assets.xcassets */,
-				BBB107C42648284D003E9D08 /* LaunchScreen.storyboard */,
-				BBB107C72648284D003E9D08 /* Info.plist */,
+				BBB107F2264828B8003E9D08 /* Resources */,
+				BBB107F3264828CA003E9D08 /* Sources */,
+				BBB1082B26482A73003E9D08 /* Storyboards */,
 			);
 			path = CompositionalLayouts;
 			sourceTree = "<group>";
@@ -126,6 +132,95 @@
 				BBB107DD2648284D003E9D08 /* Info.plist */,
 			);
 			path = CompositionalLayoutsUITests;
+			sourceTree = "<group>";
+		};
+		BBB107F2264828B8003E9D08 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBB107C72648284D003E9D08 /* Info.plist */,
+				BBB107C22648284D003E9D08 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BBB107F3264828CA003E9D08 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BBB1082C26482A85003E9D08 /* AppDelegate */,
+				BBB108062648299A003E9D08 /* Protocols */,
+				BBB1080526482994003E9D08 /* Models */,
+				BBB1080426482987003E9D08 /* Presenters */,
+				BBB1080326482981003E9D08 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		BBB1080326482981003E9D08 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBB1081E26482A08003E9D08 /* Base */,
+				BBB1082426482A46003E9D08 /* Layout */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BBB1080426482987003E9D08 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		BBB1080526482994003E9D08 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BBB108062648299A003E9D08 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BBB10807264829BB003E9D08 /* ViewBase.swift */,
+				BBB1080F264829C3003E9D08 /* PresenterBase.swift */,
+				BBB10814264829D5003E9D08 /* ViewControllerInstantiable.swift */,
+				BBB10819264829DE003E9D08 /* PresenterInstantiable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BBB1081E26482A08003E9D08 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BBB1081F26482A13003E9D08 /* ViewControllerBase.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BBB1082426482A46003E9D08 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				BBB1082D26482AB2003E9D08 /* CompositionalLayoutsViewController.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		BBB1082B26482A73003E9D08 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BBB107C42648284D003E9D08 /* LaunchScreen.storyboard */,
+				BBB1084E2648E647003E9D08 /* ConpositionalLayouts.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BBB1082C26482A85003E9D08 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BBB107B92648284C003E9D08 /* AppDelegate.swift */,
+				BBB107BB2648284C003E9D08 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +327,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBB107C62648284D003E9D08 /* LaunchScreen.storyboard in Resources */,
+				BBB1084F2648E647003E9D08 /* ConpositionalLayouts.storyboard in Resources */,
 				BBB107C32648284D003E9D08 /* Assets.xcassets in Resources */,
-				BBB107C12648284C003E9D08 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +353,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBB107BE2648284C003E9D08 /* ViewController.swift in Sources */,
+				BBB1082E26482AB2003E9D08 /* CompositionalLayoutsViewController.swift in Sources */,
+				BBB10815264829D5003E9D08 /* ViewControllerInstantiable.swift in Sources */,
+				BBB1081A264829DE003E9D08 /* PresenterInstantiable.swift in Sources */,
 				BBB107BA2648284C003E9D08 /* AppDelegate.swift in Sources */,
+				BBB10810264829C3003E9D08 /* PresenterBase.swift in Sources */,
+				BBB1082026482A13003E9D08 /* ViewControllerBase.swift in Sources */,
 				BBB107BC2648284C003E9D08 /* SceneDelegate.swift in Sources */,
+				BBB10808264829BB003E9D08 /* ViewBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +396,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BBB107BF2648284C003E9D08 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BBB107C02648284C003E9D08 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BBB107C42648284D003E9D08 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -438,7 +530,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7MTQ5H3G29;
-				INFOPLIST_FILE = CompositionalLayouts/Info.plist;
+				INFOPLIST_FILE = CompositionalLayouts/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +550,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7MTQ5H3G29;
-				INFOPLIST_FILE = CompositionalLayouts/Info.plist;
+				INFOPLIST_FILE = CompositionalLayouts/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
