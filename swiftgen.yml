@@ -1,0 +1,18 @@
+input_dir: CompositionalLayouts
+output_dir: CompositionalLayouts/Resources/Constants
+strings:
+  inputs: Resources/Localizable.strings
+  outputs:
+    templateName: structured-swift5
+    output: Strings.swift
+xcassets:
+  inputs: Resources/Assets.xcassets
+  outputs:
+    templateName: swift5
+    output: Assets.swift
+ib:
+ inputs: Sources
+ filter: .+\.storyboard$
+ outputs:
+    templateName: scenes-swift5
+    output: Segues.swift
