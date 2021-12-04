@@ -11,6 +11,7 @@ import RxRelay
 
 protocol MainViewModelInputs {
     func viewDidLoad()
+    func fetchData(shouldRefresh: Bool)
 }
 
 protocol MainViewModelOutputs {
@@ -51,16 +52,29 @@ final class MainViewModel: MainViewModelInputs, MainViewModelOutputs, MainViewMo
     var result: Observable<[SectionModel]> { return resultRelay.asObservable() }
 
     func viewDidLoad() {
+        fetchData(shouldRefresh: true)
+    }
+
+    func fetchData(shouldRefresh: Bool) {
 
         loadingRelay.accept(true)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.loadingRelay.accept(false)
-            let towns: [SectionItem] = self.towns.map { .main(town: $0 ) }
-            let shops: [SectionItem] = self.shops.map { .sub(shop: $0 ) }
-            let result: [SectionModel] = [.main(title: "町名", items: towns), .sub(title: "店名", items: shops)]
-            self.resultRelay.accept(result)
-
+            switch shouldRefresh {
+            case true:
+                let towns: [SectionItem] = self.towns.map { .main(town: $0 ) }
+                let shops: [SectionItem] = self.shops.map { .sub(shop: $0 ) }
+                let result: [SectionModel] = [.main(title: "町名", items: towns), .sub(title: "店名", items: shops)]
+                self.resultRelay.accept(result)
+            case false:
+                let previousTowns = self.resultRelay.value[0].items
+                let previousShops = self.resultRelay.value[1].items
+                let towns: [SectionItem] = previousTowns + self.towns.map { .main(town: $0 ) }
+                let shops: [SectionItem] = previousShops + self.shops.map { .sub(shop: $0 ) }
+                let result: [SectionModel] = [.main(title: "町名", items: towns), .sub(title: "店名", items: shops)]
+                self.resultRelay.accept(result)
+            }
         }
     }
 }

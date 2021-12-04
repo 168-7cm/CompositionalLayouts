@@ -122,9 +122,8 @@ final class MainViewController: UIViewController {
             return header
         case UICollectionView.elementKindSectionFooter:
             let footer = collectionView.dequeueReusableCustomFooterView(with: FooterView.self, kind: kind, indexPath: indexPath)
-            footer.bind()
-            self.viewModel.outputs.loading.bind(to: footer.isLoadingRelay).disposed(by: footer.disposeBag)
-            if collectionView.isDragging { self.viewModel.inputs.viewDidLoad() }
+            footer.bind(observable: self.viewModel.outputs.loading.distinctUntilChanged().take(2))
+            if collectionView.isDragging { self.viewModel.inputs.fetchData(shouldRefresh: false) }
             return footer
         default:
             return UICollectionReusableView()

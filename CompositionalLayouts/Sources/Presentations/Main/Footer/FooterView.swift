@@ -12,19 +12,18 @@ import RxRelay
 final class FooterView: UICollectionReusableView {
 
     let disposeBag = DisposeBag()
-    let isLoadingRelay = BehaviorRelay<Bool>(value: false)
     
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
 
-    func bind() {
+    func bind(observable: Observable<Bool>) {
 
         // アニメーションしないときは表示しない
         activityIndicator.hidesWhenStopped = true
 
         // ViewControllerからの入力を受け取り、アニメーションを開始 / 停止する
-        isLoadingRelay.subscribe(onNext: { [weak self] isLoading in
-            print(isLoading, "-----isLoading")
-            isLoading ? self?.activityIndicator.startAnimating() : self?.activityIndicator.stopAnimating()
+        observable.withUnretained(self).subscribe(onNext: { owner, isLoading in
+            print("didcalled")
+            isLoading ? owner.activityIndicator.startAnimating() : owner.activityIndicator.stopAnimating()
         }).disposed(by: disposeBag)
     }
 }
