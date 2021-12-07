@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import RxDataSources
 
 final class MainViewController: UIViewController {
@@ -16,10 +17,13 @@ final class MainViewController: UIViewController {
             switch dataSource[indexPath] {
             case let .main(town: town):
                 let cell = collectionView.dequeueReusableCustomCell(with: MainCell.self, indexPath: indexPath)
+                cell.rx.tappedImageView.when(.recognized).bind(to: self.tappedTownImageViewRelay).disposed(by: cell.disposeBag)
                 cell.configure(town: town)
                 return cell
             case let .sub(shop: shop):
                 let cell = collectionView.dequeueReusableCustomCell(with: SubCell.self, indexPath: indexPath)
+                cell.rx.tappedImageView.when(.recognized).bind(to: self.tappedShopImageViewRelay).disposed(by: cell.disposeBag)
+                self.isAlreadyBind = false
                 cell.configure(shop: shop)
                 return cell
             }
@@ -35,6 +39,9 @@ final class MainViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
     private let viewModel: MainViewModelType = MainViewModel()
+    private var isAlreadyBind = false
+    private var tappedTownImageViewRelay = PublishRelay<UITapGestureRecognizer>()
+    private var tappedShopImageViewRelay = PublishRelay<UITapGestureRecognizer>()
 
     @IBOutlet private weak var collectionView: UICollectionView!
 
@@ -85,6 +92,16 @@ final class MainViewController: UIViewController {
 
         viewModel.outputs.result.bind(to: collectionView.rx.items(dataSource: mainDataSource)).disposed(by: disposeBag)
 
+        tappedTownImageViewRelay.subscribe(onNext: { [weak self] _ in
+            self?.viewModel.inputs.tappedTownImageView()
+        }).disposed(by: disposeBag)
+
+        tappedShopImageViewRelay.subscribe(onNext: { [weak self] gestureRecognizer in
+            guard let self = self else { return }
+            let location = gestureRecognizer.location(in: self.collectionView)
+            guard let indexPath = self.collectionView.indexPathForItem(at: location) else { return }
+            self.viewModel.inputs.tappedShopImageView(indexPath: indexPath)
+        }).disposed(by: disposeBag)
     }
 
     // Compositional Layout Sectionを作成する
@@ -122,8 +139,9 @@ final class MainViewController: UIViewController {
             return header
         case UICollectionView.elementKindSectionFooter:
             let footer = collectionView.dequeueReusableCustomFooterView(with: FooterView.self, kind: kind, indexPath: indexPath)
-            footer.bind(observable: self.viewModel.outputs.loading.distinctUntilChanged().take(2))
+            if !isAlreadyBind { footer.bind(observable: self.viewModel.outputs.loading.distinctUntilChanged()) }
             if collectionView.isDragging { self.viewModel.inputs.fetchData(shouldRefresh: false) }
+            isAlreadyBind = true
             return footer
         default:
             return UICollectionReusableView()

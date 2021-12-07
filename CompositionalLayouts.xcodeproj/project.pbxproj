@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,11 +17,6 @@
 		BB014DED275904A6009B1B16 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB014DEA275904A6009B1B16 /* Segues.swift */; };
 		BB014DEE275904A6009B1B16 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB014DEB275904A6009B1B16 /* Assets.swift */; };
 		BB014DEF275904A6009B1B16 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB014DEC275904A6009B1B16 /* Strings.swift */; };
-		BB1A86292755B31B00C92789 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BB1A86282755B31B00C92789 /* RxCocoa */; };
-		BB1A862B2755B31B00C92789 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = BB1A862A2755B31B00C92789 /* RxRelay */; };
-		BB1A862D2755B31B00C92789 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BB1A862C2755B31B00C92789 /* RxSwift */; };
-		BB1A86302755B34300C92789 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = BB1A862F2755B34300C92789 /* Differentiator */; };
-		BB1A86322755B34300C92789 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = BB1A86312755B34300C92789 /* RxDataSources */; };
 		BB1A86342755B38800C92789 /* SectionModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1A86332755B38800C92789 /* SectionModelType.swift */; };
 		BB1A86362755B4FC00C92789 /* MainDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1A86352755B4FC00C92789 /* MainDataSource.swift */; };
 		BB1A86382755D52000C92789 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1A86372755D52000C92789 /* MainCell.swift */; };
@@ -105,11 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB1A86302755B34300C92789 /* Differentiator in Frameworks */,
-				BB1A862D2755B31B00C92789 /* RxSwift in Frameworks */,
-				BB1A862B2755B31B00C92789 /* RxRelay in Frameworks */,
-				BB1A86322755B34300C92789 /* RxDataSources in Frameworks */,
-				BB1A86292755B31B00C92789 /* RxCocoa in Frameworks */,
 				4A2F4B4F3731CE2284A7DA35 /* Pods_CompositionalLayouts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +332,7 @@
 				BBB107B22648284C003E9D08 /* Sources */,
 				BBB107B32648284C003E9D08 /* Frameworks */,
 				BBB107B42648284C003E9D08 /* Resources */,
+				28435B752F0723A81B52B0A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -349,11 +340,6 @@
 			);
 			name = CompositionalLayouts;
 			packageProductDependencies = (
-				BB1A86282755B31B00C92789 /* RxCocoa */,
-				BB1A862A2755B31B00C92789 /* RxRelay */,
-				BB1A862C2755B31B00C92789 /* RxSwift */,
-				BB1A862F2755B34300C92789 /* Differentiator */,
-				BB1A86312755B34300C92789 /* RxDataSources */,
 			);
 			productName = CompositionalLayouts;
 			productReference = BBB107B62648284C003E9D08 /* CompositionalLayouts.app */;
@@ -386,6 +372,7 @@
 				BBB107D32648284D003E9D08 /* Sources */,
 				BBB107D42648284D003E9D08 /* Frameworks */,
 				BBB107D52648284D003E9D08 /* Resources */,
+				C5513E9DC072C043945137CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -429,8 +416,6 @@
 			);
 			mainGroup = BBB107AD2648284B003E9D08;
 			packageReferences = (
-				BB1A86272755B31B00C92789 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				BB1A862E2755B34300C92789 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = BBB107B72648284C003E9D08 /* Products */;
 			projectDirPath = "";
@@ -476,6 +461,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		28435B752F0723A81B52B0A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CompositionalLayouts/Pods-CompositionalLayouts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CompositionalLayouts/Pods-CompositionalLayouts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CompositionalLayouts/Pods-CompositionalLayouts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AEA2D92144EF15B0BDA20112 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -536,6 +538,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5513E9DC072C043945137CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CompositionalLayouts-CompositionalLayoutsUITests/Pods-CompositionalLayouts-CompositionalLayoutsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CompositionalLayouts-CompositionalLayoutsUITests/Pods-CompositionalLayouts-CompositionalLayoutsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CompositionalLayouts-CompositionalLayoutsUITests/Pods-CompositionalLayouts-CompositionalLayoutsUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EA0FE56AC49F5F071021BA58 /* [CP] Check Pods Manifest.lock */ = {
@@ -913,53 +932,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		BB1A86272755B31B00C92789 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		BB1A862E2755B34300C92789 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		BB1A86282755B31B00C92789 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB1A86272755B31B00C92789 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		BB1A862A2755B31B00C92789 /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB1A86272755B31B00C92789 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		BB1A862C2755B31B00C92789 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB1A86272755B31B00C92789 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		BB1A862F2755B34300C92789 /* Differentiator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB1A862E2755B34300C92789 /* XCRemoteSwiftPackageReference "RxDataSources" */;
-			productName = Differentiator;
-		};
-		BB1A86312755B34300C92789 /* RxDataSources */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB1A862E2755B34300C92789 /* XCRemoteSwiftPackageReference "RxDataSources" */;
-			productName = RxDataSources;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BBB107AE2648284C003E9D08 /* Project object */;
 }

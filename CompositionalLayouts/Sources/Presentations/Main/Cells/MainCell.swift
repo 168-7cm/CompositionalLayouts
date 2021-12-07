@@ -7,6 +7,8 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import RxGesture
 
 final class MainCell: UICollectionViewCell {
 
@@ -14,11 +16,18 @@ final class MainCell: UICollectionViewCell {
     
     @IBOutlet private weak var townNameLabel: UILabel!
     @IBOutlet private weak var townPopulationLabel: UILabel!
-    @IBOutlet private weak var townImageView: UIImageView!
+    @IBOutlet fileprivate weak var townImageView: UIImageView!
 
     func configure(town: Town) {
         townNameLabel.text = town.name
         townPopulationLabel.text = town.pupulation
         townImageView.image = Asset.rakuten.image
+    }
+}
+
+extension Reactive where Base: MainCell {
+
+    var tappedImageView: TapControlEvent {
+        return base.townImageView.rx.tapGesture()
     }
 }

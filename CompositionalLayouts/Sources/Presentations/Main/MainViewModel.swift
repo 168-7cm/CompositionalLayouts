@@ -12,6 +12,8 @@ import RxRelay
 protocol MainViewModelInputs {
     func viewDidLoad()
     func fetchData(shouldRefresh: Bool)
+    func tappedTownImageView()
+    func tappedShopImageView(indexPath: IndexPath)
 }
 
 protocol MainViewModelOutputs {
@@ -68,13 +70,31 @@ final class MainViewModel: MainViewModelInputs, MainViewModelOutputs, MainViewMo
                 let result: [SectionModel] = [.main(title: "町名", items: towns), .sub(title: "店名", items: shops)]
                 self.resultRelay.accept(result)
             case false:
-                let previousTowns = self.resultRelay.value[0].items
-                let previousShops = self.resultRelay.value[1].items
-                let towns: [SectionItem] = previousTowns + self.towns.map { .main(town: $0 ) }
-                let shops: [SectionItem] = previousShops + self.shops.map { .sub(shop: $0 ) }
-                let result: [SectionModel] = [.main(title: "町名", items: towns), .sub(title: "店名", items: shops)]
-                self.resultRelay.accept(result)
+                print()
+//                let previousTowns = self.resultRelay.value[0].items
+//                let previousShops = self.resultRelay.value[1].items
+//                let towns: [SectionItem] = previousTowns + self.towns.map { .main(town: $0 ) }
+//                let shops: [SectionItem] = previousShops + self.shops.map { .sub(shop: $0 ) }
+//                let result: [SectionModel] = [.main(title: "町名", items: towns), .sub(title: "店名", items: shops)]
+//                self.resultRelay.accept(result)
             }
         }
+    }
+
+    func tappedTownImageView() {
+        print("----------------")
+        let towns: [SectionItem] = [.main(town: Town(name: "あああ", location: "ああああああ", pupulation: "あああああ"))]
+        let shops: [SectionItem] = self.shops.map { .sub(shop: $0 ) }
+        let result: [SectionModel] = [.main(title: "町名", items: towns), .sub(title: "店名", items: shops)]
+        self.resultRelay.accept(result)
+    }
+
+    func tappedShopImageView(indexPath: IndexPath) {
+        print("========================")
+        let townSectionModel = resultRelay.value[0]
+        var shops: [SectionItem] = self.shops.map { .sub(shop: $0 ) }
+        shops[indexPath.row] = .sub(shop: Shop(name: "ああああああ", location: "いいいいい"))
+        let result: [SectionModel] = [townSectionModel, .sub(title: "店名", items: shops)]
+        self.resultRelay.accept(result)
     }
 }
